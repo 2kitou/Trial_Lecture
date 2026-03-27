@@ -1,0 +1,12 @@
+{
+  "name": "vgu-strategy-lab",
+  "version": "1.0.0",
+  "description": "VGU Strategy Lab Case File #001",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve ."
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}
