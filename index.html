@@ -84,8 +84,8 @@
                         setTimeLeft((prev) => {
                             if (prev <= 1) {
                                 if (phase === 'grouping') {
-                                    setPhase('pitching');
-                                    return 300;
+                                    setPhase('planning');
+                                    return 300; // 5 minutes for planning
                                 } else {
                                     clearInterval(timerRef.current);
                                     return 0;
@@ -98,8 +98,8 @@
                 return () => clearInterval(timerRef.current);
             }, [view, phase]);
 
-            const skipToPitching = () => {
-                setPhase('pitching');
+            const skipToPlanning = () => {
+                setPhase('planning');
                 setTimeLeft(300);
             };
 
@@ -113,25 +113,22 @@
                 <div className="min-h-screen flex items-center justify-center p-2 sm:p-12 font-sans selection:bg-blue-200 overflow-x-hidden">
                     <div className="relative w-full max-w-4xl py-6 sm:py-0">
                         
-                        {/* Staggered Folder Tab - Optimized size for mobile */}
+                        {/* Staggered Folder Tab */}
                         <div className="absolute -top-7 sm:-top-8 left-8 sm:left-12 w-32 sm:w-48 h-8 sm:h-10 bg-[#00205B] tab-shape z-0 flex items-center justify-center shadow-lg border-t border-blue-400/20">
                             <span className="text-[#faf9f6]/40 font-mono text-[8px] sm:text-[10px] tracking-[0.2em] sm:tracking-[0.3em] font-bold uppercase mt-1">STRAT_LOG_001</span>
                         </div>
 
-                        {/* Folder Body - Thinner border on mobile */}
+                        {/* Folder Body */}
                         <div className="relative bg-[#00205B] rounded-tr-2xl rounded-br-2xl rounded-bl-2xl shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5)] sm:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.6)] overflow-hidden border-l-[10px] sm:border-l-[16px] border-[#00153d]">
                             <div className="absolute inset-0 folder-texture pointer-events-none"></div>
                             
                             <div className="p-1.5 sm:p-6">
-                                {/* The Paper Content - Adjusted padding for mobile */}
                                 <div className="relative bg-[#faf9f6] rounded-sm shadow-2xl min-h-[600px] sm:min-h-[700px] flex flex-col p-4 pt-8 sm:p-16 border-t border-white/50">
                                     <div className="absolute inset-0 pointer-events-none paper-noise"></div>
                                     
-                                    {/* Metallic Staples - Slightly smaller on mobile */}
                                     <div className="absolute top-4 left-6 sm:top-6 sm:left-12 w-4 h-1 sm:w-6 sm:h-1.5 staple rounded-sm rotate-[-15deg] z-10"></div>
                                     <div className="absolute top-5 left-6 sm:top-8 sm:left-12 w-4 h-1 sm:w-6 sm:h-1.5 staple rounded-sm rotate-[-12deg] z-10"></div>
                                     
-                                    {/* Paperclip Tag - Repositioned/Resized for mobile */}
                                     <div className="absolute -top-3 right-6 sm:right-20 z-20 transform hover:scale-105 transition-transform cursor-default scale-75 sm:scale-100">
                                         <div className="absolute top-0 right-1/2 w-4 h-16 border-4 border-slate-400 rounded-full opacity-60"></div>
                                         <div className="relative bg-red-800 text-white px-3 py-1 font-mono text-[10px] font-black uppercase tracking-tighter shadow-md rotate-3 flex items-center gap-2 border border-red-900">
@@ -151,7 +148,6 @@
                                             <p className="font-mono text-[9px] sm:text-[11px] font-bold text-slate-500 mt-2 sm:mt-3 uppercase tracking-wider sm:tracking-[0.2em] leading-tight">Faculty of Economics and Management // BBA & BFA Intelligence Unit</p>
                                         </div>
                                         
-                                        {/* Official Date Stamp - Smaller on mobile */}
                                         <div className="relative p-1.5 border border-blue-800/30 text-blue-800/40 rounded rotate-[-5deg] font-mono text-[8px] sm:text-[10px] font-black uppercase tracking-tighter text-center self-end sm:self-auto">
                                             VGU ARCHIVE<br/>29 MAR 2026<br/>VERIFIED
                                         </div>
@@ -188,29 +184,29 @@
 
                                                     <div className="grid grid-cols-[1fr,10px,1.4fr,10px,1fr] sm:grid-cols-[1fr,60px,1.6fr,60px,1fr] items-stretch gap-1 sm:gap-2">
                                                         <div className="flex flex-col gap-3 sm:gap-8">
-                                                            <button onClick={() => startMission(MISSIONS[0])} className="group relative flex flex-col items-center justify-center py-4 px-1 sm:p-8 border sm:border-2 border-slate-900 bg-white active:bg-slate-900 active:text-white sm:hover:bg-slate-900 sm:hover:text-white transition-all rounded-sm shadow-sm">
+                                                            <button onClick={() => startMission(MISSIONS[0])} className="group relative flex flex-col items-center justify-center py-4 px-1 sm:p-8 border sm:border-2 border-slate-900 bg-white active:bg-slate-900 active:text-white sm:hover:bg-slate-900 transition-all rounded-sm shadow-sm">
                                                                 <span className="font-mono text-[6px] sm:text-[9px] text-slate-400 group-active:text-blue-300 sm:group-hover:text-blue-300 font-bold mb-1 uppercase">Sec_Alpha</span>
                                                                 <span className="text-slate-900 group-active:text-white sm:group-hover:text-white text-[8px] sm:text-sm font-black uppercase text-center">F_Left</span>
                                                             </button>
-                                                            <button onClick={() => startMission(MISSIONS[3])} className="group relative flex flex-col items-center justify-center py-4 px-1 sm:p-8 border sm:border-2 border-slate-900 bg-white active:bg-slate-900 active:text-white sm:hover:bg-slate-900 sm:hover:text-white transition-all rounded-sm shadow-sm">
+                                                            <button onClick={() => startMission(MISSIONS[3])} className="group relative flex flex-col items-center justify-center py-4 px-1 sm:p-8 border sm:border-2 border-slate-900 bg-white active:bg-slate-900 active:text-white sm:hover:bg-slate-900 transition-all rounded-sm shadow-sm">
                                                                 <span className="font-mono text-[6px] sm:text-[9px] text-slate-400 group-active:text-blue-300 sm:group-hover:text-blue-300 font-bold mb-1 uppercase">Sec_Delta</span>
                                                                 <span className="text-slate-900 group-active:text-white sm:group-hover:text-white text-[8px] sm:text-sm font-black uppercase text-center">B_Left</span>
                                                             </button>
                                                         </div>
                                                         <div className="flex items-center justify-center"><div className="h-full border-l border-dashed border-slate-200"></div></div>
                                                         <div className="flex flex-col">
-                                                            <button onClick={() => startMission(MISSIONS[2])} className="flex-1 group relative flex flex-col items-center justify-center px-1 py-6 sm:p-10 border-2 sm:border-4 border-slate-900 bg-slate-50 active:bg-slate-900 active:text-white sm:hover:bg-slate-900 sm:hover:text-white transition-all rounded-sm shadow-md">
+                                                            <button onClick={() => startMission(MISSIONS[2])} className="flex-1 group relative flex flex-col items-center justify-center px-1 py-6 sm:p-10 border-2 sm:border-4 border-slate-900 bg-slate-50 active:bg-slate-900 active:text-white sm:hover:bg-slate-900 transition-all rounded-sm shadow-md">
                                                                 <span className="font-mono text-[7px] sm:text-[11px] text-slate-400 group-active:text-blue-300 sm:group-hover:text-blue-300 font-bold mb-1 sm:mb-2 tracking-widest sm:tracking-[0.4em] uppercase text-center">Sec_Charlie</span>
                                                                 <span className="text-slate-900 group-active:text-white sm:group-hover:text-white text-[9px] sm:text-lg font-black uppercase text-center leading-tight">Central<br/>Axis</span>
                                                             </button>
                                                         </div>
                                                         <div className="flex items-center justify-center"><div className="h-full border-l border-dashed border-slate-200"></div></div>
                                                         <div className="flex flex-col gap-3 sm:gap-8">
-                                                            <button onClick={() => startMission(MISSIONS[1])} className="group relative flex flex-col items-center justify-center py-4 px-1 sm:p-8 border sm:border-2 border-slate-900 bg-white active:bg-slate-900 active:text-white sm:hover:bg-slate-900 sm:hover:text-white transition-all rounded-sm shadow-sm">
+                                                            <button onClick={() => startMission(MISSIONS[1])} className="group relative flex flex-col items-center justify-center py-4 px-1 sm:p-8 border sm:border-2 border-slate-900 bg-white active:bg-slate-900 active:text-white sm:hover:bg-slate-900 transition-all rounded-sm shadow-sm">
                                                                 <span className="font-mono text-[6px] sm:text-[9px] text-slate-400 group-active:text-blue-300 sm:group-hover:text-blue-300 font-bold mb-1 uppercase">Sec_Bravo</span>
                                                                 <span className="text-slate-900 group-active:text-white sm:group-hover:text-white text-[8px] sm:text-sm font-black uppercase text-center">F_Right</span>
                                                             </button>
-                                                            <button onClick={() => startMission(MISSIONS[4])} className="group relative flex flex-col items-center justify-center py-4 px-1 sm:p-8 border sm:border-2 border-slate-900 bg-white active:bg-slate-900 active:text-white sm:hover:bg-slate-900 sm:hover:text-white transition-all rounded-sm shadow-sm">
+                                                            <button onClick={() => startMission(MISSIONS[4])} className="group relative flex flex-col items-center justify-center py-4 px-1 sm:p-8 border sm:border-2 border-slate-900 bg-white active:bg-slate-900 active:text-white sm:hover:bg-slate-900 transition-all rounded-sm shadow-sm">
                                                                 <span className="font-mono text-[6px] sm:text-[9px] text-slate-400 group-active:text-blue-300 sm:group-hover:text-blue-300 font-bold mb-1 uppercase">Sec_Echo</span>
                                                                 <span className="text-slate-900 group-active:text-white sm:group-hover:text-white text-[8px] sm:text-sm font-black uppercase text-center">B_Right</span>
                                                             </button>
@@ -223,7 +219,6 @@
 
                                     {view === 'dossier' && activeMission && (
                                         <div className="flex-1 animate-slide flex flex-col relative">
-                                            {/* Red Hand-Stamped "EYES ONLY" Stamp */}
                                             <div className="absolute top-0 right-0 stamp border-[4px] sm:border-[6px] border-red-700/60 px-2 sm:px-4 py-0.5 sm:py-1 text-red-700/60 font-black text-lg sm:text-2xl uppercase tracking-tighter opacity-80 pointer-events-none z-0">
                                                 Eyes Only
                                             </div>
@@ -231,19 +226,19 @@
                                             <div className="grid grid-cols-1 lg:grid-cols-[1fr,260px] gap-6 sm:gap-10">
                                                 <div className="space-y-6 sm:space-y-8">
                                                     <section>
-                                                        <h3 className="text-[9px] sm:text-[11px] font-mono font-black text-slate-400 uppercase tracking-widest mb-1">Target Entity</h3>
+                                                        <h3 className="text-[9px] sm:text-[11px] font-mono font-black text-slate-400 uppercase tracking-widest mb-1">Competitor Entity</h3>
                                                         <p className="text-2xl sm:text-4xl font-serif font-black text-[#00205B] flex flex-wrap items-center gap-2 sm:gap-3">
                                                             Mixue Ice Cream & Tea
                                                             <span className="text-[8px] sm:text-[10px] font-mono font-normal bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full">ACTIVE_THREAT</span>
                                                         </p>
                                                     </section>
                                                     <section>
-                                                        <h3 className="text-[9px] sm:text-[11px] font-mono font-black text-slate-400 uppercase tracking-widest mb-1">Assigned Framework</h3>
+                                                        <h3 className="text-[9px] sm:text-[11px] font-mono font-black text-slate-400 uppercase tracking-widest mb-1">Assigned Role</h3>
                                                         <div className="text-xl sm:text-3xl font-black text-slate-900 border-l-[4px] sm:border-l-[6px] border-slate-900 pl-3 sm:pl-4 py-1.5 sm:py-2 bg-slate-100/50">{activeMission.identity}</div>
                                                     </section>
                                                     <section className="bg-slate-100/70 p-4 sm:p-6 border-l-4 border-slate-300 shadow-sm relative">
                                                         <div className="absolute top-1 sm:top-2 right-2 sm:right-4 font-mono text-[7px] sm:text-[8px] text-slate-400 font-bold uppercase">Source: Ground Intel</div>
-                                                        <h3 className="text-[9px] sm:text-[11px] font-mono font-black text-slate-500 uppercase tracking-widest mb-2 sm:mb-3">Intelligence Briefing</h3>
+                                                        <h3 className="text-[9px] sm:text-[11px] font-mono font-black text-slate-500 uppercase tracking-widest mb-2 sm:mb-3">Short Briefing</h3>
                                                         <p className="text-slate-800 font-serif leading-relaxed text-[13px] sm:text-[15px]">{activeMission.intel}</p>
                                                     </section>
                                                     <section className="bg-white p-4 sm:p-8 border-2 sm:border-[3px] border-slate-900 shadow-xl relative">
@@ -257,27 +252,29 @@
                                                         <div className="absolute top-0 right-0 p-1 opacity-10">
                                                             <svg width="30" height="30" viewBox="0 0 24 24" className="sm:w-10 sm:h-10"><path d="M12 2L1 21h22L12 2zm0 3.45l8.15 14.1H3.85L12 5.45zM11 16h2v2h-2v-2zm0-7h2v5h-2V9z" fill="currentColor"/></svg>
                                                         </div>
-                                                        <h4 className="font-mono text-[9px] sm:text-[10px] font-black text-amber-900 uppercase mb-2 sm:mb-3 underline decoration-2 underline-offset-4">Field Protocol</h4>
+                                                        <h4 className="font-mono text-[9px] sm:text-[10px] font-black text-amber-900 uppercase mb-2 sm:mb-3 underline decoration-2 underline-offset-4">Team Protocol</h4>
                                                         <p className="text-[12px] sm:text-[13px] font-handwriting text-amber-950 font-semibold leading-relaxed">
-                                                            Organize into a Cell (2-3 personnel). Synthesize a concise strategic pitch for the board. You have limited time.
+                                                            Form a Team (2-3 personnel). You have 2 mins for Grouping and 5 mins for Planning. Prepare a 2-minute pitch.
                                                         </p>
                                                     </div>
 
                                                     <div className="bg-white p-4 sm:p-6 rounded-sm border-2 border-slate-900 shadow-xl relative">
                                                         <div className="mb-3 sm:mb-4 border-b border-slate-100 pb-2 flex justify-between">
-                                                            <span className="text-[8px] sm:text-[9px] font-mono font-black text-slate-400 uppercase tracking-widest">Operation Clock</span>
-                                                            <span className="text-[8px] sm:text-[9px] font-mono font-black text-blue-600 uppercase">{phase === 'grouping' ? 'Planning' : 'Execution'}</span>
+                                                            <span className="text-[8px] sm:text-[9px] font-mono font-black text-slate-400 uppercase tracking-widest uppercase">
+                                                                Phase: {phase === 'grouping' ? 'Grouping' : 'Planning'}
+                                                            </span>
+                                                            <span className="text-[8px] sm:text-[9px] font-mono font-black text-blue-600 uppercase">Timer Active</span>
                                                         </div>
                                                         <div className={`text-4xl sm:text-5xl font-mono font-black tracking-tighter text-center py-2 sm:py-3 border-y sm:border-y-2 border-slate-50 my-1 sm:my-2 ${timeLeft <= 10 ? 'text-red-600 animate-pulse' : phase === 'grouping' ? 'text-blue-700' : 'text-slate-900'}`}>{formatTime(timeLeft)}</div>
                                                         <div className="mt-4 sm:mt-6">
                                                             {phase === 'grouping' ? (
-                                                                <button onClick={skipToPitching} className="w-full py-3 sm:py-4 bg-slate-900 text-white text-[10px] sm:text-[11px] font-mono font-black uppercase active:scale-95 transition-all tracking-[0.1em] sm:tracking-[0.2em] rounded-sm shadow-lg">Finalize Strategy</button>
+                                                                <button onClick={skipToPlanning} className="w-full py-3 sm:py-4 bg-slate-900 text-white text-[10px] sm:text-[11px] font-mono font-black uppercase active:scale-95 transition-all tracking-[0.1em] sm:tracking-[0.2em] rounded-sm shadow-lg">Start Planning</button>
                                                             ) : (
                                                                 <div className="flex flex-col items-center">
                                                                     <div className="w-full h-1 bg-slate-100 mb-3 overflow-hidden">
-                                                                        <div className="h-full bg-blue-600 animate-[loading_5s_linear_infinite]" style={{width: '60%'}}></div>
+                                                                        <div className="h-full bg-blue-600" style={{width: `${(timeLeft/300)*100}%`, transition: 'width 1s linear'}}></div>
                                                                     </div>
-                                                                    <div className="text-[8px] text-center text-slate-400 font-mono py-1 uppercase font-black tracking-[0.2em] animate-pulse">Analysis in Progress</div>
+                                                                    <div className="text-[8px] text-center text-slate-400 font-mono py-1 uppercase font-black tracking-[0.2em] animate-pulse">Strategy Synthesis</div>
                                                                 </div>
                                                             )}
                                                         </div>
@@ -291,7 +288,7 @@
                                         </div>
                                     )}
 
-                                    {/* Footer Section - Stacked on very small screens if needed */}
+                                    {/* Footer Section */}
                                     <div className="mt-auto pt-8 sm:pt-12 flex justify-between items-end gap-2">
                                         <div className="flex items-center gap-3 sm:gap-6">
                                             <div className="w-10 h-10 sm:w-16 sm:h-16 border-2 sm:border-[4px] border-slate-900 flex flex-col items-center justify-center text-slate-900 font-black leading-none bg-white shadow-sm">
@@ -317,7 +314,6 @@
                             </div>
                         </div>
 
-                        {/* Staggered Shadow behind folder */}
                         <div className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4 w-full h-full bg-black/20 -z-10 rounded-2xl blur-lg sm:blur-xl"></div>
                     </div>
                 </div>
