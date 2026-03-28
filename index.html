@@ -54,12 +54,13 @@
     <script type="text/babel">
         const { useState, useEffect, useRef } = React;
 
+        // UPDATED: Now the user IS Mixue, defending against the 5 Forces
         const MISSIONS = [
-            { id: "alpha", identity: "Threat of New Entrants", intel: "Mixue is highly profitable. They have established high 'barriers to entry' including prime real estate, massive supply chains, and a loyal customer base.", mission: "Bypass their defenses. Formulate 2 creative strategies to launch a rival brand and capture their market share WITHOUT requiring massive upfront capital." },
-            { id: "bravo", identity: "Threat of Substitutes", intel: "You intend to capture Mixue's market share, but you are strictly prohibited from selling milk tea, ice cream, or direct beverage equivalents.", mission: "Make their core product irrelevant. Formulate a completely different product or experience that serves the exact same consumer need. How do you divert their Gen-Z demographic?" },
-            { id: "charlie", identity: "Bargaining Power of Suppliers", intel: "You control the only supply chain in the city capable of producing their signature tea leaves and ingredients. Mixue is entirely dependent on your shipments to operate.", mission: "Maximize your margins. Formulate 2 aggressive operational strategies to extract more revenue from Mixue without forcing the company into immediate bankruptcy." },
-            { id: "delta", identity: "Bargaining Power of Buyers", intel: "You influence the purchasing decisions of thousands of local students via social media. You are no longer willing to pay current prices for their products.", mission: "Manipulate the market dynamics. Formulate a strategy to organize the buyer base and force Mixue to implement aggressive discounts or VIP tiers. What leverage will you use?" },
-            { id: "echo", identity: "Rivalry Among Existing Competitors", intel: "You are the primary direct competitor to Mixue, located on the exact same street. Your goal is to acquire 50% of their daily foot traffic this month.", mission: "You CANNOT initiate a price war (this destroys profit margins). Formulate 2 strategies to outcompete them based on differentiation or superior value, not lower prices." }
+            { id: "Entrants", identity: "Threat of New Entrants", intel: "Intelligence indicates a massive international beverage conglomerate is preparing to launch a sub-brand in Vietnam, directly targeting our low-cost model and prime real estate locations.", mission: "Defend our territory. Formulate 2 strategic initiatives to raise our 'barriers to entry' and ensure this new competitor burns through their capital before they can establish a foothold against us." },
+            { id: "Substitutes", identity: "Threat of Substitutes", intel: "Market data shows our core Gen-Z demographic is beginning to spend their disposable income on new trendy lifestyle experiences and healthy alternative snacks instead of our sweet beverages.", mission: "Neutralize the substitute threat. Formulate a strategy to evolve our product line or brand experience so that Mixue remains the primary choice for youth spending." },
+            { id: "Suppliers", identity: "Bargaining Power of Suppliers", intel: "Our primary supplier for signature tea leaves and dairy powders has just announced a 30% price hike, threatening our low-cost business model. We are currently heavily dependent on their shipments.", mission: "Regain supply chain control. Formulate 2 aggressive operational strategies to reduce our dependence on this supplier and force them to negotiate better terms without disrupting our daily operations." },
+            { id: "Buyers", identity: "Bargaining Power of Buyers", intel: "A massive social media movement among local university students is organizing a boycott, demanding VIP loyalty tiers, healthier options, and aggressive student discounts.", mission: "Manage buyer leverage. Formulate a strategy to appease this powerful customer base and restore brand loyalty WITHOUT permanently destroying our profit margins." },
+            { id: "Competitors", identity: "Rivalry Among Existing Competitors", intel: "Fierce local competitors on the exact same street are aggressively mimicking our menu and actively trying to poach our daily foot traffic. The street is reaching saturation.", mission: "Crush the local rivalry. We CANNOT initiate a price war (our prices are already rock bottom). Formulate 2 strategies to decisively differentiate Mixue and retain 100% of our foot traffic." }
         ];
 
         function App() {
@@ -225,14 +226,14 @@
                                             <div className="grid grid-cols-1 lg:grid-cols-[1fr,260px] gap-6 sm:gap-10">
                                                 <div className="space-y-6 sm:space-y-8">
                                                     <section>
-                                                        <h3 className="text-[9px] sm:text-[11px] font-mono font-black text-slate-400 uppercase tracking-widest mb-1">Competitor Entity</h3>
+                                                        <h3 className="text-[9px] sm:text-[11px] font-mono font-black text-slate-400 uppercase tracking-widest mb-1">Corporate Entity</h3>
                                                         <p className="text-2xl sm:text-4xl font-serif font-black text-[#00205B] flex flex-wrap items-center gap-2 sm:gap-3">
                                                             Mixue Ice Cream & Tea
-                                                            <span className="text-[8px] sm:text-[10px] font-mono font-normal bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full">ACTIVE_THREAT</span>
+                                                            <span className="text-[8px] sm:text-[10px] font-mono font-normal bg-red-100 text-red-800 border border-red-800 px-2 py-0.5 rounded-full">UNDER_THREAT</span>
                                                         </p>
                                                     </section>
                                                     <section>
-                                                        <h3 className="text-[9px] sm:text-[11px] font-mono font-black text-slate-400 uppercase tracking-widest mb-1">Assigned Role</h3>
+                                                        <h3 className="text-[9px] sm:text-[11px] font-mono font-black text-slate-400 uppercase tracking-widest mb-1">Your Threat</h3>
                                                         <div className="text-xl sm:text-3xl font-black text-slate-900 border-l-[4px] sm:border-l-[6px] border-slate-900 pl-3 sm:pl-4 py-1.5 sm:py-2 bg-slate-100/50">{activeMission.identity}</div>
                                                     </section>
                                                     <section className="bg-slate-100/70 p-4 sm:p-6 border-l-4 border-slate-300 shadow-sm relative">
