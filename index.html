@@ -56,11 +56,11 @@
 
         // UPDATED: Now the user IS Mixue, defending against the 5 Forces
         const MISSIONS = [
-            { id: "Entrants", identity: "Threat of New Entrants", intel: "Intelligence indicates a massive international beverage conglomerate is preparing to launch a sub-brand in Vietnam, directly targeting our low-cost model and prime real estate locations.", mission: "Defend our territory. Formulate 2 strategic initiatives to raise our 'barriers to entry' and ensure this new competitor burns through their capital before they can establish a foothold against us." },
-            { id: "Substitutes", identity: "Threat of Substitutes", intel: "Market data shows our core Gen-Z demographic is beginning to spend their disposable income on new trendy lifestyle experiences and healthy alternative snacks instead of our sweet beverages.", mission: "Neutralize the substitute threat. Formulate a strategy to evolve our product line or brand experience so that Mixue remains the primary choice for youth spending." },
-            { id: "Suppliers", identity: "Bargaining Power of Suppliers", intel: "Our primary supplier for signature tea leaves and dairy powders has just announced a 30% price hike, threatening our low-cost business model. We are currently heavily dependent on their shipments.", mission: "Regain supply chain control. Formulate 2 aggressive operational strategies to reduce our dependence on this supplier and force them to negotiate better terms without disrupting our daily operations." },
-            { id: "Buyers", identity: "Bargaining Power of Buyers", intel: "A massive social media movement among local university students is organizing a boycott, demanding VIP loyalty tiers, healthier options, and aggressive student discounts.", mission: "Manage buyer leverage. Formulate a strategy to appease this powerful customer base and restore brand loyalty WITHOUT permanently destroying our profit margins." },
-            { id: "Competitors", identity: "Rivalry Among Existing Competitors", intel: "Fierce local competitors on the exact same street are aggressively mimicking our menu and actively trying to poach our daily foot traffic. The street is reaching saturation.", mission: "Crush the local rivalry. We CANNOT initiate a price war (our prices are already rock bottom). Formulate 2 strategies to decisively differentiate Mixue and retain 100% of our foot traffic." }
+            { id: "alpha", identity: "Threat of New Entrants", intel: "Intelligence indicates a massive international beverage conglomerate is preparing to launch a sub-brand in Vietnam, directly targeting our low-cost model and prime real estate locations.", mission: "Defend our territory. Formulate 2 strategic initiatives to raise our 'barriers to entry' and ensure this new competitor burns through their capital before they can establish a foothold against us." },
+            { id: "bravo", identity: "Threat of Substitutes", intel: "Market data shows our core Gen-Z demographic is beginning to spend their disposable income on new trendy lifestyle experiences and healthy alternative snacks instead of our sweet beverages.", mission: "Neutralize the substitute threat. Formulate a strategy to evolve our product line or brand experience so that Mixue remains the primary choice for youth spending." },
+            { id: "charlie", identity: "Bargaining Power of Suppliers", intel: "Our primary supplier for signature tea leaves and dairy powders has just announced a 30% price hike, threatening our low-cost business model. We are currently heavily dependent on their shipments.", mission: "Regain supply chain control. Formulate 2 aggressive operational strategies to reduce our dependence on this supplier and force them to negotiate better terms without disrupting our daily operations." },
+            { id: "delta", identity: "Bargaining Power of Buyers", intel: "A massive social media movement among local university students is organizing a boycott, demanding VIP loyalty tiers, healthier options, and aggressive student discounts.", mission: "Manage buyer leverage. Formulate a strategy to appease this powerful customer base and restore brand loyalty WITHOUT permanently destroying our profit margins." },
+            { id: "echo", identity: "Rivalry Among Existing Competitors", intel: "Fierce local competitors on the exact same street are aggressively mimicking our menu and actively trying to poach our daily foot traffic. The street is reaching saturation.", mission: "Crush the local rivalry. We CANNOT initiate a price war (our prices are already rock bottom). Formulate 2 strategies to decisively differentiate Mixue and retain 100% of our foot traffic." }
         ];
 
         function App() {
@@ -185,29 +185,29 @@
                                                     <div className="grid grid-cols-[1fr,10px,1.4fr,10px,1fr] sm:grid-cols-[1fr,60px,1.6fr,60px,1fr] items-stretch gap-1 sm:gap-2">
                                                         <div className="flex flex-col gap-3 sm:gap-8">
                                                             <button onClick={() => startMission(MISSIONS[0])} className="group relative flex flex-col items-center justify-center py-4 px-1 sm:p-8 border sm:border-2 border-slate-900 bg-white active:bg-slate-900 transition-all rounded-sm shadow-sm">
-                                                                <span className="font-mono text-[6px] sm:text-[9px] text-slate-400 group-active:text-blue-300 font-bold mb-1 uppercase tracking-tighter">Sec_Entrants</span>
+                                                                <span className="font-mono text-[6px] sm:text-[9px] text-slate-400 group-active:text-blue-300 font-bold mb-1 uppercase tracking-tighter">Entrants</span>
                                                                 <span className="text-slate-900 group-active:text-white text-[8px] sm:text-sm font-black uppercase text-center">F_Left</span>
                                                             </button>
                                                             <button onClick={() => startMission(MISSIONS[3])} className="group relative flex flex-col items-center justify-center py-4 px-1 sm:p-8 border sm:border-2 border-slate-900 bg-white active:bg-slate-900 transition-all rounded-sm shadow-sm">
-                                                                <span className="font-mono text-[6px] sm:text-[9px] text-slate-400 group-active:text-blue-300 font-bold mb-1 uppercase tracking-tighter">Sec_Buyers</span>
+                                                                <span className="font-mono text-[6px] sm:text-[9px] text-slate-400 group-active:text-blue-300 font-bold mb-1 uppercase tracking-tighter">Buyers</span>
                                                                 <span className="text-slate-900 group-active:text-white text-[8px] sm:text-sm font-black uppercase text-center">B_Left</span>
                                                             </button>
                                                         </div>
                                                         <div className="flex items-center justify-center"><div className="h-full border-l border-dashed border-slate-200"></div></div>
                                                         <div className="flex flex-col">
                                                             <button onClick={() => startMission(MISSIONS[2])} className="flex-1 group relative flex flex-col items-center justify-center px-1 py-6 sm:p-10 border-2 sm:border-4 border-slate-900 bg-slate-50 active:bg-slate-900 transition-all rounded-sm shadow-md">
-                                                                <span className="font-mono text-[7px] sm:text-[11px] text-slate-400 group-active:text-blue-300 font-bold mb-1 sm:mb-2 tracking-widest sm:tracking-[0.4em] uppercase text-center">Sec_Suppliers</span>
+                                                                <span className="font-mono text-[7px] sm:text-[11px] text-slate-400 group-active:text-blue-300 font-bold mb-1 sm:mb-2 tracking-widest sm:tracking-[0.4em] uppercase text-center">Suppliers</span>
                                                                 <span className="text-slate-900 group-active:text-white text-[9px] sm:text-lg font-black uppercase text-center leading-tight">Central<br/>Axis</span>
                                                             </button>
                                                         </div>
                                                         <div className="flex items-center justify-center"><div className="h-full border-l border-dashed border-slate-200"></div></div>
                                                         <div className="flex flex-col gap-3 sm:gap-8">
                                                             <button onClick={() => startMission(MISSIONS[1])} className="group relative flex flex-col items-center justify-center py-4 px-1 sm:p-8 border sm:border-2 border-slate-900 bg-white active:bg-slate-900 transition-all rounded-sm shadow-sm">
-                                                                <span className="font-mono text-[6px] sm:text-[9px] text-slate-400 group-active:text-blue-300 font-bold mb-1 uppercase tracking-tighter">Sec_Substitutes</span>
+                                                                <span className="font-mono text-[6px] sm:text-[9px] text-slate-400 group-active:text-blue-300 font-bold mb-1 uppercase tracking-tighter">Substitutes</span>
                                                                 <span className="text-slate-900 group-active:text-white text-[8px] sm:text-sm font-black uppercase text-center">F_Right</span>
                                                             </button>
                                                             <button onClick={() => startMission(MISSIONS[4])} className="group relative flex flex-col items-center justify-center py-4 px-1 sm:p-8 border sm:border-2 border-slate-900 bg-white active:bg-slate-900 transition-all rounded-sm shadow-sm">
-                                                                <span className="font-mono text-[6px] sm:text-[9px] text-slate-400 group-active:text-blue-300 font-bold mb-1 uppercase tracking-tighter">Sec_Competitors</span>
+                                                                <span className="font-mono text-[6px] sm:text-[9px] text-slate-400 group-active:text-blue-300 font-bold mb-1 uppercase tracking-tighter">Competitors</span>
                                                                 <span className="text-slate-900 group-active:text-white text-[8px] sm:text-sm font-black uppercase text-center">B_Right</span>
                                                             </button>
                                                         </div>
@@ -226,7 +226,7 @@
                                             <div className="grid grid-cols-1 lg:grid-cols-[1fr,260px] gap-6 sm:gap-10">
                                                 <div className="space-y-6 sm:space-y-8">
                                                     <section>
-                                                        <h3 className="text-[9px] sm:text-[11px] font-mono font-black text-slate-400 uppercase tracking-widest mb-1">Corporate Entity</h3>
+                                                        <h3 className="text-[9px] sm:text-[11px] font-mono font-black text-slate-400 uppercase tracking-widest mb-1">Your Corporate</h3>
                                                         <p className="text-2xl sm:text-4xl font-serif font-black text-[#00205B] flex flex-wrap items-center gap-2 sm:gap-3">
                                                             Mixue Ice Cream & Tea
                                                             <span className="text-[8px] sm:text-[10px] font-mono font-normal bg-red-100 text-red-800 border border-red-800 px-2 py-0.5 rounded-full">UNDER_THREAT</span>
@@ -262,7 +262,7 @@
                                                         <div className="absolute top-0 left-0 w-full h-1.5 bg-yellow-400"></div>
                                                         <h4 className="font-mono text-[10px] sm:text-[11px] font-black text-amber-900 uppercase mb-3 underline decoration-2 underline-offset-4 tracking-wider">Team Protocol</h4>
                                                         <p className="text-[14px] sm:text-[15px] font-bold text-amber-950 leading-relaxed font-serif">
-                                                            Form a team of <span className="underline decoration-amber-900/30">2-3 personnel</span>. 
+                                                            Form a team of <span className="underline decoration-amber-900/30">15-20 personnel</span>. 
                                                         </p>
                                                         <ul className="mt-3 space-y-2 text-[13px] sm:text-[14px] font-bold text-amber-900 font-serif list-disc pl-4">
                                                             <li>Grouping: 2 Mins</li>
