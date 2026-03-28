@@ -54,7 +54,7 @@
     <script type="text/babel">
         const { useState, useEffect, useRef } = React;
 
-        // UPDATED: Now featuring VGU Boba with campus-based missions!
+        // UPDATED: High school friendly vocabulary, keeping the 5 Forces concept
         const MISSIONS = [
             { id: "entrants", identity: "Threat of New Entrants", intel: "A huge global drink brand is trying to open a massive store right outside the university gates. They want to steal our student customers by copying our cheap prices.", mission: "Defend our turf! Come up with 2 creative ideas to make it super hard for them to get students to visit, so they give up before they even get started." },
             { id: "substitutes", identity: "Threat of Substitutes", intel: "Students are starting to spend their pocket money on trendy new energy drinks and healthy campus snacks instead of buying our sweet boba.", mission: "Beat the alternatives! Create a plan to update our menu or make our shop more fun, so young people still want to spend their money at VGU Boba." },
@@ -170,9 +170,11 @@
                                                     Discussion: Defend VGU Boba
                                                 </h2>
                                                 
-                                                {/* VGU BOBA BACKGROUND STORY */}
+                                                {/* VGU BOBA BACKGROUND STORY WITH PRODUCTS AND DEMOGRAPHIC */}
                                                 <div className="text-[12px] sm:text-[14px] text-slate-800 font-serif mt-3 ml-4 sm:ml-6 leading-relaxed max-w-2xl bg-blue-50/80 p-3 sm:p-5 border-l-[3px] border-[#00205B] shadow-sm">
-                                                    <strong>BACKGROUND:</strong> <em>"VGU Boba"</em> started as a tiny student club project, but it exploded into the most popular hangout spot on campus. It is now a highly profitable business. But success brings enemies, and VGU Boba is under attack from all sides!
+                                                    <p className="mb-2"><strong>BACKGROUND:</strong> <em>"VGU Boba"</em> started as a tiny student club project, but it exploded into the most popular hangout spot on campus. It is now a highly profitable business. But success brings enemies, and VGU Boba is under attack from all sides!</p>
+                                                    <p className="mb-2"><strong>KEY PRODUCTS:</strong> Signature Sweet Milk Teas, Fresh Fruit Teas, and affordable campus snacks.</p>
+                                                    <p><strong>TARGET DEMOGRAPHIC:</strong> Gen-Z university students looking for cheap prices, good vibes, and a comfortable place to socialize or study between classes.</p>
                                                 </div>
 
                                                 <p className="text-[10px] sm:text-[12px] text-slate-600 font-mono mt-4 ml-4 sm:ml-6 leading-relaxed max-w-lg italic uppercase font-bold">
