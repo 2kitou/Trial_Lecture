@@ -54,13 +54,13 @@
     <script type="text/babel">
         const { useState, useEffect, useRef } = React;
 
-        // UPDATED: High school friendly vocabulary, keeping the 5 Forces concept
+        // UPDATED: Now featuring VGU Boba with campus-based missions!
         const MISSIONS = [
-            { id: "entrants", identity: "Threat of New Entrants", intel: "A huge global drink company is about to open new stores in Vietnam. They want to steal our customers by copying our cheap prices and grabbing the best store locations.", mission: "Defend our turf! Come up with 2 creative ideas to make it super hard for them to open their stores, so they give up before they even get started." },
-            { id: "substitutes", identity: "Threat of Substitutes", intel: "Teens are starting to spend their pocket money on trendy new activities and healthy snacks instead of buying our sweet milk tea and ice cream.", mission: "Beat the alternatives! Create a plan to update our menu or make our stores more fun, so young people still want to spend their money at Mixue." },
-            { id: "suppliers", identity: "Bargaining Power of Suppliers", intel: "The factory that sells us our special tea leaves and milk powder just raised their prices by 30%. Since we rely on them completely, this could ruin our cheap prices!", mission: "Take back control! Think of 2 smart ways to rely less on this one supplier so we can force them to lower their prices back down, without running out of ingredients." },
-            { id: "buyers", identity: "Bargaining Power of Buyers", intel: "Thousands of local students are teaming up on TikTok to boycott Mixue. They are demanding VIP memberships, healthier drinks, and huge student discounts.", mission: "Win them back! Come up with a strategy to make the students happy and loyal again, BUT you can't just give everything away for free and lose all our money." },
-            { id: "competitors", identity: "Rivalry Among Existing Competitors", intel: "Rival milk tea shops on our street are copying our menu and trying to steal our daily customers. The street is getting way too crowded with drink shops.", mission: "Crush the competition! We CANNOT lower our prices (they are already as low as possible). Think of 2 ways to make Mixue stand out and keep our customers loyal." }
+            { id: "entrants", identity: "Threat of New Entrants", intel: "A huge global drink brand is trying to open a massive store right outside the university gates. They want to steal our student customers by copying our cheap prices.", mission: "Defend our turf! Come up with 2 creative ideas to make it super hard for them to get students to visit, so they give up before they even get started." },
+            { id: "substitutes", identity: "Threat of Substitutes", intel: "Students are starting to spend their pocket money on trendy new energy drinks and healthy campus snacks instead of buying our sweet boba.", mission: "Beat the alternatives! Create a plan to update our menu or make our shop more fun, so young people still want to spend their money at VGU Boba." },
+            { id: "suppliers", identity: "Bargaining Power of Suppliers", intel: "The local farm that sells us our special tea leaves and tapioca pearls just raised their prices by 30%. Since we rely on them completely, this could ruin our student-friendly prices!", mission: "Take back control! Think of 2 smart ways to rely less on this one farm so we can force them to lower their prices back down, without running out of ingredients." },
+            { id: "buyers", identity: "Bargaining Power of Buyers", intel: "Thousands of students are teaming up on the VGU Confessions page to boycott VGU Boba. They are demanding VIP memberships, better study spaces, and huge student discounts.", mission: "Win them back! Come up with a strategy to make the students happy and loyal again, BUT you can't just give everything away for free and lose all our money." },
+            { id: "competitors", identity: "Rivalry Among Existing Competitors", intel: "Other student-run cafes and local food stalls are copying our secret boba recipes and trying to steal our daily customers. The campus is getting too crowded with drink shops.", mission: "Crush the competition! We CANNOT lower our prices (they are already as low as possible). Think of 2 ways to make VGU Boba stand out and keep our customers loyal." }
         ];
 
         function App() {
@@ -164,12 +164,18 @@
                                                 <div className="text-[60px] sm:text-[120px] font-serif font-black -rotate-12 uppercase border-[6px] sm:border-[12px] border-slate-900 px-6 sm:px-12 leading-none">Internal</div>
                                             </div>
 
-                                            <div className="mb-6 sm:mb-8">
+                                            <div className="mb-6 sm:mb-8 relative z-10">
                                                 <h2 className="text-lg sm:text-2xl font-serif font-bold text-slate-900 flex items-center gap-2 sm:gap-3">
                                                     <span className="w-2 h-2 sm:w-3 sm:h-3 bg-[#00205B] rounded-full"></span>
-                                                    Choose Your Sitting Area
+                                                    Operation: Defend VGU Boba
                                                 </h2>
-                                                <p className="text-[10px] sm:text-[12px] text-slate-600 font-mono mt-2 sm:mt-3 ml-4 sm:ml-6 leading-relaxed max-w-lg italic uppercase font-bold">
+                                                
+                                                {/* VGU BOBA BACKGROUND STORY */}
+                                                <div className="text-[12px] sm:text-[14px] text-slate-800 font-serif mt-3 ml-4 sm:ml-6 leading-relaxed max-w-2xl bg-blue-50/80 p-3 sm:p-5 border-l-[3px] border-[#00205B] shadow-sm">
+                                                    <strong>BACKGROUND:</strong> <em>"VGU Boba"</em> started as a tiny student club project, but it exploded into the most popular hangout spot on campus. It is now a highly profitable business. But success brings enemies, and VGU Boba is under attack from all sides!
+                                                </div>
+
+                                                <p className="text-[10px] sm:text-[12px] text-slate-600 font-mono mt-4 ml-4 sm:ml-6 leading-relaxed max-w-lg italic uppercase font-bold">
                                                     "Select your sector to initialize the case briefing."
                                                 </p>
                                             </div>
@@ -226,10 +232,10 @@
                                             <div className="grid grid-cols-1 lg:grid-cols-[1fr,260px] gap-6 sm:gap-10">
                                                 <div className="space-y-6 sm:space-y-8">
                                                     <section>
-                                                        <h3 className="text-[9px] sm:text-[11px] font-mono font-black text-slate-400 uppercase tracking-widest mb-1">Your Corporate</h3>
+                                                        <h3 className="text-[9px] sm:text-[11px] font-mono font-black text-slate-400 uppercase tracking-widest mb-1">Corporate Entity</h3>
                                                         <p className="text-2xl sm:text-4xl font-serif font-black text-[#00205B] flex flex-wrap items-center gap-2 sm:gap-3">
-                                                            Mixue Ice Cream & Tea
-                                                            <span className="text-[8px] sm:text-[10px] font-mono font-normal bg-red-100 text-red-800 border border-red-800 px-2 py-0.5 rounded-full">UNDER_THREAT</span>
+                                                            VGU Boba
+                                                            <span className="text-[8px] sm:text-[10px] font-mono font-normal bg-red-100 text-red-800 border border-red-800 px-2 py-0.5 rounded-full shadow-sm">UNDER_THREAT</span>
                                                         </p>
                                                     </section>
                                                     <section>
@@ -237,7 +243,7 @@
                                                         <div className="text-xl sm:text-3xl font-black text-slate-900 border-l-[4px] sm:border-l-[6px] border-slate-900 pl-3 sm:pl-4 py-1.5 sm:py-2 bg-slate-100/50">{activeMission.identity}</div>
                                                     </section>
                                                     <section className="bg-slate-100/70 p-4 sm:p-6 border-l-4 border-slate-300 shadow-sm relative">
-                                                        <div className="absolute top-1 sm:top-2 right-2 sm:right-4 font-mono text-[7px] sm:text-[8px] text-slate-400 font-bold uppercase">Source: Intel</div>
+                                                        <div className="absolute top-1 sm:top-2 right-2 sm:right-4 font-mono text-[7px] sm:text-[8px] text-slate-400 font-bold uppercase">Source: Campus Intel</div>
                                                         <h3 className="text-[9px] sm:text-[11px] font-mono font-black text-slate-500 uppercase tracking-widest mb-2 sm:mb-3">Briefing Intel</h3>
                                                         <p className="text-slate-800 font-serif leading-relaxed text-[14px] sm:text-[16px]">{activeMission.intel}</p>
                                                     </section>
